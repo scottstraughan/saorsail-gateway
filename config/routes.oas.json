@@ -1,0 +1,74 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "My Zuplo API"
+  },
+  "paths": {
+    "/install": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "Install",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "handler": {
+            "export": "default",
+            "module": "$import(./modules/install-request)",
+            "options": {}
+          },
+          "policies": {
+            "inbound": [],
+            "outbound": []
+          }
+        },
+        "operationId": "d6bc7bb3-4116-4fba-a85e-fef837b27537"
+      }
+    },
+    "/check/{pairCode}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "Check for Installs",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "handler": {
+            "export": "default",
+            "module": "$import(./modules/check-request)",
+            "options": {}
+          },
+          "policies": {
+            "inbound": [],
+            "outbound": []
+          }
+        },
+        "operationId": "a74aa9eb-8751-4781-b5d0-75abb6687fee"
+      }
+    },
+    "/check-test/{pairCode}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "Check without Deleting",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "handler": {
+            "export": "default",
+            "module": "$import(./modules/test-request)",
+            "options": {}
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "811b130f-309b-4f3d-95cd-85193b458442"
+      }
+    }
+  }
+}
